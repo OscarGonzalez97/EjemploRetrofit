@@ -23,6 +23,7 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val binding = FragmentMainBinding.inflate(inflater, container, false)
+        // utilizamos la arquitectura viewModel
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         viewModel.response.observe(viewLifecycleOwner, Observer { response ->
             binding.message.text = response.toString()

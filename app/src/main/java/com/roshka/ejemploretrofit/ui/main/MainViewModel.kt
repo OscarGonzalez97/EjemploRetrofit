@@ -18,6 +18,7 @@ class MainViewModel : ViewModel() {
     }
 
     private fun getRazas() {
+        // llamamos al objeto de la API y obtenemos los resultados
         Api.retrofitService.getListaRazas().enqueue(object: Callback<String>{ // para que lo haga en otro hilo
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 _response.value = response.body()
