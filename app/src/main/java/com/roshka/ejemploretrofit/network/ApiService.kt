@@ -16,6 +16,8 @@ private val retrofit = Retrofit.Builder()
 interface ApiService {
     @GET("breeds/list/all") // especificamos el endpoint especifico
     fun getListaRazas(): Call<String> // nos crea un objeto Call, que se utiliza para usar el request
+    @GET("solicitudes") // especificamos el endpoint especifico
+    fun getSolicitudes(): Call<String> // nos crea un objeto Call, que se utiliza para usar el request
 }
 
 // ya que consume mucho y solo necesitamos una instancia de la API podemos crear un objeto publico para usarlo en todas partes
